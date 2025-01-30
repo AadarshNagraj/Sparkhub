@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronics Encyclopedia</title>
+    <link rel="stylesheet" href="style.css">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<meta name="description" content="Learn electronics, build DIY projects, and master robotics.">
+<meta name="keywords" content="electronics, circuits, resistors, Arduino, robotics">
+</head>
+<body>
+    <header>
+	<button id="dark-mode-toggle">Toggle Dark Mode</button>
+        <h1>Welcome to the Electronics Encyclopedia</h1>
+		<p>Your ultimate guide to learning electronics, building DIY projects, and exploring robotics.</p>
+    <a href="#projects" class="btn">Explore Projects</a>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#components">Components</a>
+        <a href="#circuits">Circuits</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About This Encyclopedia</h2>
+        <p>This website is a comprehensive guide to electronics, covering components, circuits, and more.</p>
+    </section>
+
+    <!-- Featured Topics Section -->
+    <section id="topics">
+        <h2>Featured Topics</h2>
+        <ul>
+            <li>Resistors</li>
+            <li>Capacitors</li>
+            <li>Transistors</li>
+        </ul>
+    </section>
+
+    <!-- DIY Projects Section -->
+    <section id="projects">
+        <h2>DIY Projects</h2>
+        <div class="project">
+            <h3>Solar-Powered Robot</h3>
+            <p>Build a robot powered by solar energy...</p>
+            <a href="#" class="btn">View Tutorial</a>
+        </div>
+
+        <div class="component">
+            <h4>Required Components</h4>
+            <ul>
+                <li>Solar Panel (5V)</li>
+                <li>Arduino Board</li>
+            </ul>
+        </div>
+    </section>
+
+	
+     <section id="resistors">
+    <h2>Resistor Color Codes</h2>
+    <p>Resistors use color bands to indicate their value. Here's how to read them:</p>
+    <img src="resistor.jpg" alt="Resistor Diagram" width="300">
+    <table>
+        <tr>
+            <th>Color</th>
+            <th>Value</th>
+        </tr>
+        <tr>
+            <td>Black</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>Brown</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>Red</td>
+            <td>2</td>
+        </tr>
+    </table>
+     </section>
+
+<section id="blog">
+    <h2>Latest Posts</h2>
+    <div class="blog-post">
+        <h3>How to Build a Simple Circuit</h3>
+        <p>Learn how to build a basic circuit using a battery, resistor, and LED.</p>
+        <a href="#" class="btn">Read More</a>
+    </div>
+    <div class="blog-post">
+        <h3>Introduction to Arduino</h3>
+        <p>Get started with Arduino and build your first project.</p>
+        <a href="#" class="btn">Read More</a>
+    </div>
+</section>   
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+        
+        <button type="submit" class="btn">Send Message</button>
+    </form>
+</section>
+   
+   <!-- Footer -->
+    <footer>
+    <p>© 2023 Electronics Encyclopedia. All rights reserved.</p>
+    <div class="social-links">
+        <a href="https://twitter.com" target="_blank">Twitter</a>
+        <a href="https://github.com" target="_blank">GitHub</a>
+        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+    </div>
+     </footer>
+
+<script>
+    const toggleBtn = document.getElementById('dark-mode-toggle');
+    toggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+    });
+</script>
+
+</body>
+</html>
