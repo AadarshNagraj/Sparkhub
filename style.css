@@ -1,48 +1,50 @@
 /* style.css */
-/* Global Styles */
 :root {
-    --primary: #64ffda; /* Teal */
-    --secondary: #0a192f; /* Dark Blue */
-    --accent: #233554; /* Lighter Blue */
-    --text: #ccd6f6; /* Light Gray */
-    --background: #020c1b; /* Dark Background */
-    --card-bg: #112240; /* Card Background */
+    --primary: #007bff;       /* Blue */
+    --secondary: #6c757d;     /* Gray */
+    --accent: #28a745;        /* Green */
+    --background: #f8f9fa;    /* Light Gray */
+    --text: #212529;          /* Dark Gray */
+    --card-bg: #ffffff;       /* White */
     --border-radius: 8px;
-    --transition-speed: 0.3s;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Base Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background: var(--background);
+    background-color: var(--background);
     color: var(--text);
     line-height: 1.6;
-    transition: background var(--transition-speed) ease, color var(--transition-speed) ease;
 }
 
 a {
     color: var(--primary);
     text-decoration: none;
-    transition: color var(--transition-speed) ease;
+    transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #52d3d8;
+    text-decoration: underline;
 }
 
-/* Header & Navigation */
-header {
-    background: linear-gradient(135deg, var(--secondary), var(--background));
+/* Navigation */
+nav {
+    background: var(--card-bg);
     padding: 1rem 2rem;
-    border-bottom: 3px solid var(--primary);
+    box-shadow: var(--box-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.main-nav {
+.nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -50,375 +52,152 @@ header {
     margin: 0 auto;
 }
 
-.brand-section {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
 .logo {
-    font-size: 1.8rem;
-    font-weight: bold;
+    font-size: 1.5rem;
+    font-weight: 700;
     color: var(--primary);
-}
-
-.tagline {
-    font-size: 0.9rem;
-    color: var(--text);
-    opacity: 0.8;
 }
 
 .nav-links {
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem;
     align-items: center;
 }
 
-.nav-links a {
+.nav-link {
     color: var(--text);
-    font-size: 0.9rem;
-    padding: 0.5rem 1rem;
-    border-radius: var(--border-radius);
-    transition: background var(--transition-speed) ease;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    position: relative;
 }
 
-.nav-links a:hover {
-    background: var(--accent);
-}
-
-.btn-icon {
-    background: none;
-    border: none;
-    color: var(--text);
-    cursor: pointer;
-    font-size: 1.2rem;
-    transition: color var(--transition-speed) ease;
-}
-
-.btn-icon:hover {
+.nav-link:hover {
     color: var(--primary);
 }
 
-/* Sections */
-section {
-    padding: 4rem 2rem;
+/* Hero Section */
+.hero-section {
+    padding: 6rem 2rem 4rem;
+    text-align: center;
+    background: linear-gradient(45deg, var(--primary), #0056b3);
+    color: white;
+    margin-bottom: 2rem;
+}
+
+.hero-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* About Section */
+.about-section {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 3rem auto;
+    padding: 3rem 2rem;
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
 }
 
-h2 {
+.about-section h2 {
     font-size: 2rem;
-    color: var(--primary);
     margin-bottom: 1.5rem;
-}
-
-hr.compact-hr {
-    border: 0;
-    height: 2px;
-    background: var(--primary);
-    margin: 1rem 0;
-}
-
-/* Featured Topics */
-.topic-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-}
-
-.topic-card {
-    background: var(--card-bg);
-    padding: 1.5rem;
-    border-radius: var(--border-radius);
-    text-align: center;
-    transition: transform var(--transition-speed) ease;
-}
-
-.topic-card:hover {
-    transform: translateY(-5px);
-}
-
-.topic-card i {
-    font-size: 2rem;
-    color: var(--primary);
-    margin-bottom: 1rem;
-}
-
-.topic-card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-}
-
-.topic-card p {
-    font-size: 0.9rem;
-    color: var(--text);
-    opacity: 0.8;
-}
-
-/* DIY Projects */
-.project-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-}
-
-.project-card {
-    background: var(--card-bg);
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    transition: transform var(--transition-speed) ease;
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-}
-
-.project-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.project-content {
-    padding: 1.5rem;
-}
-
-.project-content h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-.project-meta {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
-    font-size: 0.9rem;
-    color: var(--text);
-    opacity: 0.8;
-}
-
-.project-meta i {
-    margin-right: 0.5rem;
-}
-
-.component-list {
-    background: var(--accent);
-    padding: 1.5rem;
-    border-radius: var(--border-radius);
-}
-
-.component-list h4 {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-}
-
-.component-list ul {
-    list-style: none;
-}
-
-.component-list li {
-    margin-bottom: 0.5rem;
-}
-
-/* Resistor Color Code Table */
-.reference-table {
-    overflow-x: auto;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 1rem;
-}
-
-th, td {
-    padding: 0.75rem;
-    text-align: center;
-    border: 1px solid var(--accent);
-}
-
-th {
-    background: var(--accent);
     color: var(--primary);
 }
 
-td.black { background: #000; color: #fff; }
-td.brown { background: #8B4513; color: #fff; }
-td.red { background: #FF0000; color: #fff; }
-
-/* Blog Section */
-.blog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.blog-post {
-    background: var(--card-bg);
-    padding: 1.5rem;
-    border-radius: var(--border-radius);
-    transition: transform var(--transition-speed) ease;
-}
-
-.blog-post:hover {
-    transform: translateY(-5px);
-}
-
-.post-header {
-    margin-bottom: 1rem;
-}
-
-.post-header h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-}
-
-.post-header time {
-    font-size: 0.9rem;
-    color: var(--text);
-    opacity: 0.8;
-}
-
-.blog-post p {
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-}
-
-.btn-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--primary);
-    font-weight: bold;
-}
-
-.btn-link:hover {
-    color: #52d3d8;
-}
-
-/* Contact Form */
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid var(--accent);
-    border-radius: var(--border-radius);
-    background: var(--card-bg);
-    color: var(--text);
-    transition: border-color var(--transition-speed) ease;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    border-color: var(--primary);
-    outline: none;
-}
-
-.btn-block {
-    width: 100%;
-    padding: 0.75rem;
-    background: var(--primary);
+.about-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
     color: var(--secondary);
-    border: none;
-    border-radius: var(--border-radius);
-    font-weight: bold;
-    cursor: pointer;
-    transition: background var(--transition-speed) ease;
 }
 
-.btn-block:hover {
-    background: #52d3d8;
+/* Features Section */
+.features-section {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feature-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+}
+
+.feature-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--text);
+}
+
+.feature-card p {
+    font-size: 1rem;
+    color: var(--secondary);
+    line-height: 1.6;
 }
 
 /* Footer */
-.site-footer {
-    background: var(--secondary);
+footer {
+    background: var(--card-bg);
     padding: 2rem;
-    margin-top: 4rem;
     text-align: center;
+    margin-top: 4rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-.footer-brand h4 {
-    font-size: 1.5rem;
-    color: var(--primary);
-    margin-bottom: 0.5rem;
-}
-
-.footer-social {
-    display: flex;
-    gap: 1rem;
-}
-
-.footer-social a {
-    font-size: 1.2rem;
-    color: var(--text);
-    transition: color var(--transition-speed) ease;
-}
-
-.footer-social a:hover {
-    color: var(--primary);
-}
-
-.footer-copyright {
-    margin-top: 1rem;
+footer p {
+    color: var(--secondary);
     font-size: 0.9rem;
-    color: var(--text);
-    opacity: 0.8;
-}
-
-/* Dark Mode */
-.dark-mode {
-    --background: #0a192f;
-    --card-bg: #112240;
-    --text: #ccd6f6;
-    --primary: #64ffda;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .main-nav {
+    .nav-container {
         flex-direction: column;
-        align-items: flex-start;
         gap: 1rem;
     }
 
     .nav-links {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
-    .topic-grid, .blog-grid {
+    .hero-section {
+        padding: 4rem 1rem;
+    }
+
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .features-grid {
         grid-template-columns: 1fr;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
     }
 }
