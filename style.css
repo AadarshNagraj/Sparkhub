@@ -10,7 +10,6 @@
     --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -19,19 +18,9 @@
 }
 
 body {
-    background-color: var(--background);
+    background: var(--background);
     color: var(--text);
     line-height: 1.6;
-}
-
-a {
-    color: var(--primary);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    text-decoration: underline;
 }
 
 /* Navigation */
@@ -54,21 +43,179 @@ nav {
 
 .logo {
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: bold;
     color: var(--primary);
 }
 
 .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
     align-items: center;
 }
 
 .nav-link {
     color: var(--text);
     font-weight: 500;
-    padding: 0.5rem 0;
-    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary);
+}
+
+/* Content Section */
+.content-section {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 2rem;
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.content-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+    text-align: center;
+}
+
+.content-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--secondary);
+    text-align: center;
+}
+
+.example, .project {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: var(--background);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.example h3, .project h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text);
+}
+
+.example p, .project p {
+    font-size: 1rem;
+    color: var(--secondary);
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: var(--primary);
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+    background: var(--card-bg);
+    padding: 2rem;
+    text-align: center;
+    margin-top: 4rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    color: var(--secondary);
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 1rem;
+    }
+
+    .content-section {
+        margin: 2rem auto;
+        padding: 1rem;
+    }
+}
+
+/* style.css */
+:root {
+    --primary: #007bff;       /* Blue */
+    --secondary: #6c757d;     /* Gray */
+    --accent: #28a745;        /* Green */
+    --background: #f8f9fa;    /* Light Gray */
+    --text: #212529;          /* Dark Gray */
+    --card-bg: #ffffff;       /* White */
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* Navigation */
+nav {
+    background: var(--card-bg);
+    padding: 1rem 2rem;
+    box-shadow: var(--box-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.nav-link {
+    color: var(--text);
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
 .nav-link:hover {
@@ -77,29 +224,53 @@ nav {
 
 /* Hero Section */
 .hero-section {
-    padding: 6rem 2rem 4rem;
+    padding: 6rem 1rem;
     text-align: center;
-    background: linear-gradient(45deg, var(--primary), #0056b3);
+    background: linear-gradient(135deg, #007bff, #0056b3);
     color: white;
     margin-bottom: 2rem;
 }
 
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 .hero-section h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    line-height: 1.2;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+    font-weight: 700;
 }
 
 .hero-section p {
-    font-size: 1.2rem;
-    max-width: 800px;
-    margin: 0 auto;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.hero-button {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: white;
+    color: #007bff;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.hero-button:hover {
+    background: #f0f0f0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* About Section */
 .about-section {
     max-width: 1200px;
-    margin: 3rem auto;
+    margin: 4rem auto;
     padding: 3rem 2rem;
     background: var(--card-bg);
     border-radius: var(--border-radius);
@@ -110,12 +281,16 @@ nav {
     font-size: 2rem;
     margin-bottom: 1.5rem;
     color: var(--primary);
+    text-align: center;
 }
 
 .about-section p {
     font-size: 1.1rem;
     line-height: 1.8;
     color: var(--secondary);
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 /* Features Section */
@@ -138,11 +313,12 @@ nav {
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
 }
 
 .feature-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
 .feature-icon {
@@ -182,11 +358,13 @@ footer p {
     .nav-container {
         flex-direction: column;
         gap: 1rem;
+        align-items: flex-start;
     }
 
     .nav-links {
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: flex-start;
+        gap: 1rem;
     }
 
     .hero-section {
@@ -194,10 +372,15 @@ footer p {
     }
 
     .hero-section h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .features-grid {
         grid-template-columns: 1fr;
+    }
+
+    .about-section {
+        margin: 2rem auto;
+        padding: 2rem 1rem;
     }
 }
