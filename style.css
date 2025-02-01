@@ -183,6 +183,7 @@ body {
 }
 
 /* Navigation */
+/* Navigation Styles */
 nav {
     background: var(--card-bg);
     padding: 1rem 2rem;
@@ -200,26 +201,47 @@ nav {
     margin: 0 auto;
 }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--primary);
+.logo img {
+    height: 40px; /* Adjust based on your logo size */
+    width: auto;
+    transition: transform 0.3s ease;
 }
 
-.nav-links {
+.logo:hover img {
+    transform: scale(1.05);
+}
+
+.auth-buttons {
     display: flex;
-    gap: 1.5rem;
-    align-items: center;
+    gap: 1rem;
 }
 
-.nav-link {
-    color: var(--text);
-    font-weight: 500;
-    transition: color 0.3s ease;
+.login-btn, .signup-btn {
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
-.nav-link:hover {
-    color: var(--primary);
+.login-btn {
+    background: var(--primary);
+    color: white;
+}
+
+.login-btn:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+}
+
+.signup-btn {
+    background: var(--accent);
+    color: white;
+}
+
+.signup-btn:hover {
+    background: #218838;
+    transform: translateY(-2px);
 }
 
 /* Hero Section */
